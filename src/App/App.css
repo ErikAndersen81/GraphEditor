@@ -1,0 +1,169 @@
+.App {
+  display: grid;
+  column-count: 2;
+  justify-content: center;
+  grid-auto-flow: column;
+  column-gap: 1em;
+  background-color: white;
+}
+
+.App > h1 {
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.Graph {
+  display: inline-block;
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
+svg {
+  height: 600px;
+  width: 600px;
+  margin-top: 1em;
+  background-color: #d5fced;
+  border-style: outset;
+  border-bottom-color: #41da9f;
+  border-right-color: #239268;
+  border-top-color: #67dfb1;
+  border-left-color: #b5fadf;
+}
+
+.Controls {
+  display: inline-block;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  min-width: 256px;
+}
+
+h3 {
+  color: #239268;
+  text-align: center;
+  border-style: groove;
+}
+
+h3 + div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  text-align: center;
+  background-color: #d5fced;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+input {
+  border-radius: 100%;
+  border-style: solid;
+  text-align: center;
+}
+
+/* Hide input arrows in Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide input arrows in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+label {
+  display: block;
+  align-items: center;
+  text-align: center;
+}
+
+.Node,
+.splitNode {
+  stroke: #175c53;
+  stroke-width: 0.4;
+  fill: #b5fadf;
+}
+
+text,
+textPath {
+  stroke-opacity: 0;
+  text-anchor: middle;
+  font-weight: bold;
+}
+
+.Node > text {
+  fill: #175c53;
+  font-size: 3px;
+  cursor: default;
+}
+
+.Node > line {
+  stroke-opacity: 0;
+}
+
+.splitNode > line {
+  stroke-width: 0.2;
+}
+
+.splitNode > text {
+  fill: #175c53;
+  font-size: 2.5px;
+  cursor: default;
+}
+
+textPath {
+  font-size: 3px;
+  cursor: default;
+}
+
+.CircleInput {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.Arc {
+  stroke-width: 0.4;
+  stroke: #4f9223;
+}
+
+.selected {
+  animation-name: strokeWidthAnim;
+  animation-duration: 666ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes strokeWidthAnim {
+  from {
+    stroke-width: 0.4;
+  }
+  to {
+    stroke-width: 0.6;
+  }
+}
+
+.cost {
+  fill: #cb26d1;
+  color: #cb26d1;
+  border-color: #cb26d1;
+}
+
+.flow {
+  fill: #5230e9;
+  color: #5230e9;
+  border-color: #5230e9;
+}
+
+.lower {
+  fill: #1767fa;
+  color: #1767fa;
+  border-color: #1767fa;
+}
+
+.upper {
+  fill: #07c1e2;
+  color: #07c1e2;
+  border-color: #07c1e2;
+}
